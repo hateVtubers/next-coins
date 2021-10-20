@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Tbody } from "../components/Tbody";
 import { Thead } from "../components/Thead";
+import HeadContainer from "../container/head";
+import Image from 'next/image';
 
 const Home = ({ coins }) => {
   const [money, setMoney] = useState(coins);
@@ -13,21 +15,26 @@ const Home = ({ coins }) => {
   };
 
   return (
-    <div className="bg-black min-h-screen text-white">
-      <header className="text-center mb-10">
-        <input
-          className="text-anakiwa-900 bg-aquamarine-600 outline-none w-60 lg:w-80"
-          type="text"
-          onChange={handleChange}
-        />
-      </header>
-      <main className="mx-auto">
-        <table className="table-fixed border-collapse text-sm mx-auto bg-black">
-          <Thead></Thead>
-          <Tbody coins={money}></Tbody>
-        </table>
-      </main>
-    </div>
+    <HeadContainer>
+      <div className="bg-black min-h-screen text-white">
+        <header className="text-center mb-10">
+          <div className="pt-10 pb-5">
+            <Image src="/pain.jpg" alt="pain" width={250} height={300}></Image>
+          </div>
+          <input
+            className="text-anakiwa-900 bg-aquamarine-600 outline-none w-60 lg:w-80"
+            type="text"
+            onChange={handleChange}
+          />
+        </header>
+        <main className="mx-auto">
+          <table className="table-fixed border-collapse text-sm mx-auto bg-black">
+            <Thead></Thead>
+            <Tbody coins={money}></Tbody>
+          </table>
+        </main>
+      </div>
+    </HeadContainer>
   );
 };
 

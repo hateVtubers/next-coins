@@ -1,11 +1,13 @@
-import { useEffect } from "react";
+import HeadContainer from "../../container/head";
 import { CoinCard } from "../../components/CoinCard";
 
 const Coin = ({ data: { name, image: { large }, symbol } }) => {
   return (
-    <div className="bg-black min-h-screen grid justify-items-center content-center">
-      <CoinCard name={name} image={large} symbol={symbol}></CoinCard>
-    </div>
+    <HeadContainer>
+      <div className="bg-black min-h-screen grid justify-items-center content-center">
+        <CoinCard name={name} image={large} symbol={symbol}></CoinCard>
+      </div>
+    </HeadContainer>
   );
 };
 
